@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Queen's Gambit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,7 +27,13 @@
                 <em>The Queen's Gambit</em> is a critically acclaimed Netflix miniseries that follows the life of chess prodigy Beth Harmon as she rises through the ranks of the chess world while battling personal struggles. Set during the Cold War era, the show beautifully blends drama, strategy, and character development.
             </p>
             <button id="quote-btn" aria-label="Show random chess quote">Show a Chess Quote</button>
-            <blockquote id="chess-quote" style="display:none; margin-top:1rem;"></blockquote>
+            <div class="quote-block-container">
+                <blockquote id="chess-quote" style="display:none;"></blockquote>
+            </div>
+            <section id="coin-flip-section">
+                <button id="coin-flip-btn" aria-label="Flip a chess coin">Flip a Chess Coin</button>
+                <span id="coin-flip-result"></span>
+            </section>
         </section>
         <section id="characters">
             <h2>Main Characters</h2>
@@ -33,7 +42,7 @@
                 <li><strong>Alma Wheatley</strong> – Beth's adoptive mother.</li>
                 <li><strong>Mr. Shaibel</strong> – The janitor who teaches Beth chess.</li>
                 <li><strong>Benny Watts</strong> – A chess champion and Beth's friend.</li>
-                <li><strong>Harry Beltik</strong> – A chess player and Beth's mentor.</li>
+                <li><strong>Harry Beltik</strong> – A chess player and Beth's temporary mentor.</li>
                 <li><strong>Jolene</strong> – Beth's childhood friend from the orphanage.</li>
             </ul>
         </section>
@@ -42,54 +51,75 @@
             <div class="gallery">
                 <div class="gallery-image-container">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/tqg-107-unit-01315rc-min-1603965151.jpg" alt="Beth shaking hands with her final opponent, Vasily Borgov">
-                    <div class="gallery-image-caption">Beth faces Vasily Borgov in the final match.</div>
+                    <div class="gallery-image-caption">Beth faces Borgov in the finale!</div>
                 </div>
                 <div class="gallery-image-container">
                     <img src="https://media.newyorker.com/photos/5fad8b83485946ceb306fdce/master/pass/Syme-QueensGambit.jpg" alt="Beth Harmon playing chess">
-                    <div class="gallery-image-caption">Beth Harmon practicing.</div>
+                    <div class="gallery-image-caption">Always thinking five moves ahead...♛</div>
                 </div>
                 <div class="gallery-image-container">
                     <img src="https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABSVC0SdvWrlNcWL0lAPhwHM38iHYJCLDVP_psiIyll0R-4UkmxYWUN6ta41LxUaYzLc2kfYrzkdV6Y531SD5NA7J_8AZUWyl-JC_.jpg?r=a3c" alt="The Queen's Gambit Banner">
+                    <div class="gallery-image-caption">✨🧡✨</div>
                 </div>
             </div>
         </section>
         <section id="facts">
             <h2>Fun Facts</h2>
             <ul>
-                <li>The chess games in the series were choreographed by grandmasters Garry Kasparov and Bruce Pandolfini.</li>
-                <li>The title refers to a popular chess opening called the Queen's Gambit.</li>
-                <li>Anya Taylor-Joy, who plays Beth, learned chess specifically for the role.</li>
-                <li>The show initiated a worldwide chess boom after its release.</li>
+                <li>The chess positions in the show are based on real grandmaster games, some of which are famous in chess history.</li>
+                <li>Beth Harmon's character was inspired by real-life chess prodigies like Bobby Fischer and Judit Polgár.</li>
+                <li>The green pills Beth takes are based on Librium, a tranquilizer used in the 1960s.</li>
+                <li>After the show's release, sales of chess sets increased by over 1000% in some countries.</li>
+                <li>Many of the costumes and sets use subtle chess motifs, such as checkerboard patterns and queen crowns.</li>
+                <li>The series won 11 Primetime Emmy Awards, including Outstanding Limited Series.</li>
             </ul>
         </section>
         <section id="openings">
             <h2>Famous Chess Openings Featured</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Opening Name</th>
-                        <th>Moves</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Queen's Gambit</td>
-                        <td>1.d4 d5 2.c4</td>
-                        <td>Main theme of the show</td>
-                    </tr>
-                    <tr>
-                        <td>Sicilian Defense</td>
-                        <td>1.e4 c5</td>
-                        <td>Popular aggressive defense</td>
-                    </tr>
-                    <tr>
-                        <td>Caro-Kann Defense</td>
-                        <td>1.e4 c6</td>
-                        <td>Played by Beth in key matches</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="chess-openings-section">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-and-white-chess-board-template-design-d9649c353001bd68f86c5bf1c676bfaf_screen.jpg?ts=1747819206" alt="Chess Board" class="chess-board-image">
+                <div class="openings-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Opening Name</th>
+                                <th>Moves</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Queen's Gambit</td>
+                                <td>1. d4 d5 2. c4</td>
+                                <td>Main theme of the show. White offers a pawn to control the center.</td>
+                            </tr>
+                            <tr>
+                                <td>Sicilian Defense</td>
+                                <td>1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6</td>
+                                <td>Sharp, counterattacking opening. Popular at all levels.</td>
+                            </tr>
+                            <tr>
+                                <td>Caro-Kann Defense</td>
+                                <td>1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4</td>
+                                <td>Solid defense, often used by Beth in key matches.</td>
+                            </tr>
+                            <tr>
+                                <td>King's Indian Defense</td>
+                                <td>1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6</td>
+                                <td>Dynamic defense, used by top grandmasters.</td>
+                            </tr>
+                            <tr>
+                                <td>Ruy López</td>
+                                <td>1. e4 e5 2. Nf3 Nc6 3. Bb5</td>
+                                <td>Classic opening, rich in tactics and strategy.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="chess-board-caption">
+                <strong>Tip:</strong> The Queen's Gambit starts with 1.d4 d5 2.c4. Try visualizing it on the board above!
+            </div>
         </section>
     </main>
     <footer role="contentinfo">
@@ -102,7 +132,19 @@
         "The beauty of a move lies not in its appearance but in the thought behind it. – Aaron Nimzowitsch",
         "Every chess master was once a beginner. – Irving Chernev",
         "When you see a good move, look for a better one. – Emanuel Lasker",
-        "Chess is the struggle against the error. – Johannes Zukertort"
+        "Chess is the struggle against the error. – Johannes Zukertort",
+        "Chess is life in miniature. Chess is struggle, chess is battles. – Garry Kasparov",
+        "You must take your opponent into a deep dark forest where 2+2=5, and the path leading out is only wide enough for one. – Mikhail Tal",
+        "I have come to the personal conclusion that while all artists are not chess players, all chess players are artists. – Marcel Duchamp",
+        "The blunders are all there on the board, waiting to be made. – Savielly Tartakower",
+        "Chess holds its master in its own bonds, shackling the mind and brain so that the inner freedom of the very strongest must suffer. – Albert Einstein",
+        "To avoid losing a piece, many a player has lost the game. – Savielly Tartakower",
+        "Chess, like love, like music, has the power to make men happy. – Siegbert Tarrasch",
+        "Even a poor plan is better than no plan at all. – Mikhail Chigorin",
+        "Play the opening like a book, the middlegame like a magician, and the endgame like a machine. – Rudolf Spielmann",
+        "The hardest game to win is a won game. – Emanuel Lasker",
+        "A bad plan is better than none at all. – Frank Marshall",
+        "Chess is the gymnasium of the mind. – Blaise Pascal"
     ];
     const btn = document.getElementById('quote-btn');
     const quoteBox = document.getElementById('chess-quote');
@@ -110,6 +152,23 @@
         const idx = Math.floor(Math.random() * quotes.length);
         quoteBox.textContent = quotes[idx];
         quoteBox.style.display = 'block';
+    });
+
+    // Chess Coin Flip Feature
+    const coinBtn = document.getElementById('coin-flip-btn');
+    const coinResult = document.getElementById('coin-flip-result');
+    coinBtn.addEventListener('click', () => {
+        const isQueen = Math.random() < 0.5;
+        if (isQueen) {
+            coinResult.innerHTML = '<span id="coin-flip-queen">♛</span>Queen!';
+            coinResult.style.transform = 'scale(1.15) rotate(-3deg)';
+        } else {
+            coinResult.innerHTML = '<span id="coin-flip-pawn">♙</span>Pawn!';
+            coinResult.style.transform = 'scale(1.08) rotate(3deg)';
+        }
+        setTimeout(() => {
+            coinResult.style.transform = '';
+        }, 600);
     });
     </script>
 </body>
