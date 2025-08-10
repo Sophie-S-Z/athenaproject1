@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Queen's Gambit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>The Queen's Gambit Tribute</h1>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#characters">Characters</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#facts">Fun Facts</a>
+            <a href="#openings">Chess Openings</a>
+        </nav>
+    </header>
+    <main role="main">
+        <section id="about">
+            <h2>About the Show</h2>
+            <p>
+                <em>The Queen's Gambit</em> is a critically acclaimed Netflix miniseries that follows the life of chess prodigy Beth Harmon as she rises through the ranks of the chess world while battling personal struggles. Set during the Cold War era, the show beautifully blends drama, strategy, and character development.
+            </p>
+            <button id="quote-btn" aria-label="Show random chess quote">Show a Chess Quote</button>
+            <blockquote id="chess-quote" style="display:none; margin-top:1rem;"></blockquote>
+        </section>
+        <section id="characters">
+            <h2>Main Characters</h2>
+            <ul>
+                <li><strong>Beth Harmon</strong> – The chess prodigy and protagonist.</li>
+                <li><strong>Alma Wheatley</strong> – Beth's adoptive mother.</li>
+                <li><strong>Mr. Shaibel</strong> – The janitor who teaches Beth chess.</li>
+                <li><strong>Benny Watts</strong> – A chess champion and Beth's friend.</li>
+                <li><strong>Harry Beltik</strong> – A chess player and Beth's mentor.</li>
+                <li><strong>Jolene</strong> – Beth's childhood friend from the orphanage.</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-image-container">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/tqg-107-unit-01315rc-min-1603965151.jpg" alt="Beth shaking hands with her final opponent, Vasily Borgov">
+                    <div class="gallery-image-caption">Beth faces Vasily Borgov in the final match.</div>
+                </div>
+                <div class="gallery-image-container">
+                    <img src="https://media.newyorker.com/photos/5fad8b83485946ceb306fdce/master/pass/Syme-QueensGambit.jpg" alt="Beth Harmon playing chess">
+                    <div class="gallery-image-caption">Beth Harmon practicing.</div>
+                </div>
+                <div class="gallery-image-container">
+                    <img src="https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABSVC0SdvWrlNcWL0lAPhwHM38iHYJCLDVP_psiIyll0R-4UkmxYWUN6ta41LxUaYzLc2kfYrzkdV6Y531SD5NA7J_8AZUWyl-JC_.jpg?r=a3c" alt="The Queen's Gambit Banner">
+                </div>
+            </div>
+        </section>
+        <section id="facts">
+            <h2>Fun Facts</h2>
+            <ul>
+                <li>The chess games in the series were choreographed by grandmasters Garry Kasparov and Bruce Pandolfini.</li>
+                <li>The title refers to a popular chess opening called the Queen's Gambit.</li>
+                <li>Anya Taylor-Joy, who plays Beth, learned chess specifically for the role.</li>
+                <li>The show initiated a worldwide chess boom after its release.</li>
+            </ul>
+        </section>
+        <section id="openings">
+            <h2>Famous Chess Openings Featured</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Opening Name</th>
+                        <th>Moves</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Queen's Gambit</td>
+                        <td>1.d4 d5 2.c4</td>
+                        <td>Main theme of the show</td>
+                    </tr>
+                    <tr>
+                        <td>Sicilian Defense</td>
+                        <td>1.e4 c5</td>
+                        <td>Popular aggressive defense</td>
+                    </tr>
+                    <tr>
+                        <td>Caro-Kann Defense</td>
+                        <td>1.e4 c6</td>
+                        <td>Played by Beth in key matches</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        &copy; 2024 Tribute to The Queen's Gambit. Fan-made website.
+    </footer>
+    <script>
+    // Simple random chess quote feature
+    const quotes = [
+        "Chess is not always about winning. Sometimes it's simply about learning. And so is life.",
+        "The beauty of a move lies not in its appearance but in the thought behind it. – Aaron Nimzowitsch",
+        "Every chess master was once a beginner. – Irving Chernev",
+        "When you see a good move, look for a better one. – Emanuel Lasker",
+        "Chess is the struggle against the error. – Johannes Zukertort"
+    ];
+    const btn = document.getElementById('quote-btn');
+    const quoteBox = document.getElementById('chess-quote');
+    btn.addEventListener('click', () => {
+        const idx = Math.floor(Math.random() * quotes.length);
+        quoteBox.textContent = quotes[idx];
+        quoteBox.style.display = 'block';
+    });
+    </script>
+</body>
+</html>
