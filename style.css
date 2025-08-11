@@ -1,140 +1,204 @@
 /* Warm and Inviting "Old Money" Aesthetic CSS */
 
 :root {
-    --bg-light: #fff8f0;
-    --bg-accent: #ffe0b2;
+    --bg-light: #f5ede6;
+    --bg-accent: #e8dbc3;
     --rich-brown: #3e2c23;
-    --deep-green: #223127;
-    --gold: #e09f3e;
+    --deep-burgundy: #6b1e23;
+    --dark-oak: #2d1a1a;
+    --gold: #d4af37;
+    --gold-foil: linear-gradient(90deg, #fffbe6 0%, #d4af37 40%, #bfa76f 60%, #fffbe6 100%);
     --ivory: #f5f3e7;
     --text-dark: #4e2e0e;
     --text-muted: #bfa76f;
-    --border: #7c6a4d;
+    --border: #b8a88a;
     --shadow: 0 4px 24px rgba(40, 30, 10, 0.25);
-    --font-serif: 'Georgia', serif;
-    --font-sans: 'Inter', Arial, sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-heading: 'Cinzel', serif;
+    --font-cursive: 'Dancing Script', cursive;
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif;
-    background: linear-gradient(135deg, #2d1a1a 0%, #4e2e0e 100%);
-    color: #f5ede6;
+    font-family: var(--font-serif);
+    background: repeating-linear-gradient(135deg, #2d1a1a 0 80px, #4e2e0e 80px 160px);
+    color: var(--bg-light);
     margin: 0;
     padding: 0;
     line-height: 1.85;
     font-size: 1.08rem;
+    min-height: 100vh;
 }
 
 header {
     background: linear-gradient(90deg, #6b1e23 0%, #3e1c0e 100%);
-    padding: 2rem 0 1.2rem 0;
+    padding: 2.5rem 0 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 12px #0008;
-    border-bottom-left-radius: 32px;
-    border-bottom-right-radius: 32px;
+    box-shadow: 0 2px 24px #000a;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     position: relative;
+    border-bottom: 3px solid var(--gold);
+}
+
+header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 18px;
+    background: var(--gold-foil);
+    opacity: 0.25;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    z-index: 1;
 }
 
 header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.7rem;
+    font-family: var(--font-heading);
+    font-size: 3.1rem;
     margin: 0;
-    letter-spacing: 2px;
-    color: #f5ede6;
-    text-shadow: 0 2px 8px #6b1e23cc, 0 1px 0 #3e1c0e;
+    letter-spacing: 2.5px;
+    color: var(--bg-accent);
+    text-shadow: 0 2px 16px #6b1e23cc, 0 1px 0 #3e1c0e;
     position: relative;
+    z-index: 2;
+    background: var(--gold-foil);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header h1 .title-highlight {
+    display: inline-block;
+    position: relative;
+    padding: 0.18em 0.7em 0.18em 0.7em;
+    border-radius: 18px;
+    background: none;
+}
+.title-text {
+    background: rgba(44, 21, 21, 0.82);
+    color: #ffd700;
+    border-radius: 14px;
+    padding: 0.18em 0.7em;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-shadow: 0 2px 8px #fffbe6cc, 0 1px 0 #fffbe6, 0 2px 16px #000a;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
 header h1::after {
     content: " ♛";
-    font-size: 2.2rem;
-    color: #e8dbc3;
+    font-size: 2.3rem;
+    color: var(--gold);
     vertical-align: middle;
     margin-left: 0.3em;
+    text-shadow: 0 2px 8px #fffbe6cc;
 }
 
 nav {
-    margin: 1.5rem 0 0.5rem 0;
+    margin: 2rem 0 0.7rem 0;
     text-align: center;
+    z-index: 2;
+    position: relative;
 }
 
 nav a {
-    color: #e8dbc3;
+    color: var(--gold);
     text-decoration: none;
-    margin: 0 2.2rem;
+    margin: 0 2.3rem;
     font-weight: 600;
     font-size: 1.18rem;
     letter-spacing: 2px;
-    padding: 0.6rem 1.1rem;
-    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     box-shadow: 0 1px 4px #0004;
+    font-family: var(--font-cursive);
+    border: 1.5px solid transparent;
+    background: rgba(255,255,255,0.01);
     position: relative;
-    font-family: 'Dancing Script', cursive;
 }
 
 nav a:hover, nav a:focus {
-    background: #6b1e23;
-    color: #f5ede6;
-    box-shadow: 0 2px 8px #e8dbc344;
+    background: var(--deep-burgundy);
+    color: var(--bg-accent);
+    border-color: var(--gold);
+    box-shadow: 0 2px 12px var(--gold);
     outline: none;
 }
 
 main {
-    max-width: 900px;
-    margin: 2.5rem auto;
+    max-width: 980px;
+    margin: 2.8rem auto 2.5rem auto;
     background: linear-gradient(120deg, #3e1c0e 0%, #6b1e23 100%);
-    padding: 2.2rem 2rem 2.5rem 2rem;
-    border-radius: 18px;
-    box-shadow: 0 4px 32px #000a;
+    padding: 2.5rem 2.2rem 2.7rem 2.2rem;
+    border-radius: 28px;
+    box-shadow: 0 8px 48px #000c, 0 2px 12px var(--gold);
     position: relative;
+    border: 2.5px solid var(--gold);
 }
 
 section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.7rem;
 }
 
 h2 {
-    font-family: 'Cinzel', serif;
-    color: #e8dbc3;
+    color: var(--gold);
     margin-top: 0;
-    font-size: 1.7rem;
-    letter-spacing: 1px;
-    text-shadow: 0 1px 0 #3e1c0e;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 10px #2d1a1a44;
+    font-family: var(--font-heading);
     font-weight: 700;
+    border-bottom: 1.5px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: 1.2rem;
+    background: var(--gold-foil);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 ul {
     padding-left: 1.3em;
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: var(--font-serif);
+    font-size: 1.09rem;
 }
 
 li {
     margin-bottom: 0.7em;
-    font-size: 1.08rem;
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: var(--font-serif);
 }
 
-button#quote-btn {
-    background: linear-gradient(90deg, #e8dbc3 0%, #b8a88a 100%);
-    color: #3e1c0e;
+button#quote-btn,
+#coin-flip-btn {
+    background: var(--gold-foil);
+    color: var(--deep-burgundy);
     border: none;
-    border-radius: 8px;
-    padding: 0.8em 1.5em;
-    font-size: 1.13rem;
-    font-family: 'Dancing Script', cursive;
+    border-radius: 10px;
+    padding: 0.9em 1.7em;
+    font-size: 1.18rem;
+    font-family: var(--font-cursive);
     font-weight: bold;
     cursor: pointer;
     margin-top: 1.2em;
-    box-shadow: 0 2px 8px #0006;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-right: 1em;
+    box-shadow: 0 2px 12px #0007, 0 1px 4px var(--gold);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+    display: inline-block;
+    border: 1.5px solid var(--gold);
 }
 
-button#quote-btn:hover, button#quote-btn:focus {
-    background: #6b1e23;
-    color: #e8dbc3;
-    box-shadow: 0 4px 16px #e8dbc355;
+button#quote-btn:hover, button#quote-btn:focus,
+#coin-flip-btn:hover, #coin-flip-btn:focus {
+    background: var(--deep-burgundy);
+    color: var(--gold);
+    box-shadow: 0 4px 24px var(--gold);
     outline: none;
+    transform: scale(1.04);
 }
 
 .quote-block-container {
@@ -146,28 +210,30 @@ button#quote-btn:hover, button#quote-btn:focus {
 
 blockquote#chess-quote {
     background: #3e1c0e;
-    color: #e8dbc3;
-    border-left: 6px solid #e8dbc3;
+    color: var(--gold);
+    border-left: 6px solid var(--gold);
     margin: 0;
-    padding: 1em 2em 1em 2.5em;
-    border-radius: 10px;
+    padding: 1.2em 2.2em 1.2em 2.7em;
+    border-radius: 14px;
     font-style: italic;
-    font-size: 1.18rem;
-    line-height: 2;
-    box-shadow: 0 2px 8px #0008;
+    font-size: 1.22rem;
+    box-shadow: 0 2px 12px #000a;
     position: relative;
     min-width: 260px;
-    max-width: 520px;
+    max-width: 540px;
     text-align: left;
-    line-height: 1.6;
+    line-height: 2;
     display: block;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-serif);
+    background-image: repeating-linear-gradient(135deg, #3e1c0e 0 12px, #4e2e0e 13px 24px);
+    border-top: 1.5px solid var(--gold);
+    border-bottom: 1.5px solid var(--gold);
 }
 
 blockquote#chess-quote::before {
     content: "❝";
-    font-size: 2.2rem;
-    color: #e8dbc3;
+    font-size: 2.3rem;
+    color: var(--gold);
     position: absolute;
     left: 0.5em;
     top: 0.2em;
@@ -176,8 +242,8 @@ blockquote#chess-quote::before {
 
 blockquote#chess-quote::after {
     content: "❞";
-    font-size: 2.2rem;
-    color: #e8dbc3;
+    font-size: 2.3rem;
+    color: var(--gold);
     position: absolute;
     right: 0.5em;
     bottom: 0.2em;
@@ -187,11 +253,11 @@ blockquote#chess-quote::after {
 /* GALLERY */
 .gallery {
     display: flex;
-    gap: 2rem;
+    gap: 2.2rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
 
 .gallery-image-container {
@@ -199,15 +265,15 @@ blockquote#chess-quote::after {
     width: 320px;
     max-width: 95vw;
     aspect-ratio: unset;
-    height: 260px;
+    height: 270px;
     max-height: 34vw;
     min-height: 180px;
     overflow: hidden;
-    border-radius: 18px;
-    box-shadow: 0 6px 24px #000a, 0 1.5px 8px #e8dbc333;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px #000a, 0 2px 8px var(--gold);
     transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
     background: linear-gradient(135deg, #4e2e0e 0%, #6b1e23 100%);
-    border: 2.5px solid #b8a88a;
+    border: 2.5px solid var(--gold);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -215,229 +281,75 @@ blockquote#chess-quote::after {
 
 .gallery-image-container:hover {
     transform: scale(1.045) rotate(-1deg);
-    box-shadow: 0 12px 36px #e8dbc355, 0 2px 12px #000a;
+    box-shadow: 0 16px 48px var(--gold), 0 4px 16px #000a;
     z-index: 2;
-    border-color: #e8dbc3;
+    border-color: var(--gold);
 }
 
 .gallery-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
     display: block;
-    filter: grayscale(6%) contrast(1.09) brightness(1.01) saturate(1.08);
+    filter: grayscale(4%) contrast(1.09) brightness(1.01) saturate(1.08);
     transition: filter 0.3s;
-    border-radius: 18px 18px 0 0;
-    height: 100%;
-    border-radius: 18px 18px 0 0;
-    object-fit: cover;
-    object-position: center top;
+    border-radius: 22px 22px 0 0;
+    flex: 1 1 auto;
+    border-bottom: 1.5px solid var(--gold);
 }
 
 .gallery-image-container:hover img {
-    filter: grayscale(0%) contrast(1.18) brightness(1.07) drop-shadow(0 0 12px #e8dbc399);
+    filter: grayscale(0%) contrast(1.18) brightness(1.07) drop-shadow(0 0 12px var(--gold));
 }
 
 .gallery-image-caption {
     width: 100%;
     background: linear-gradient(0deg, #6b1e23ee 80%, #6b1e2300 100%);
-    color: #e8dbc3;
+    color: var(--gold);
     font-size: 1.13rem;
-    line-height: 1.7;
     padding: 0.8rem 1rem 0.6rem 1rem;
     opacity: 0.96;
     letter-spacing: 0.5px;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 600;
-    border-radius: 0 0 18px 18px;
+    font-family: var(--font-cursive);
+    border-radius: 0 0 22px 22px;
     pointer-events: none;
     text-shadow: 0 2px 8px #000a;
+    font-weight: 600;
     flex-shrink: 0;
     min-height: 2.5em;
     box-sizing: border-box;
+    border-top: 1.5px solid var(--gold);
 }
 
 .gallery-image-container::after {
     content: "";
-    /* No star for subtlety */
 }
 
-.chess-openings-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-top: 1.5rem;
-}
-
-.chess-board-image {
-    display: block;
-    max-width: 340px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2.5px solid #e8dbc3;
-    box-shadow: 0 2px 12px #000a;
-    background: #3e1c0e;
-    margin: 0 auto 1.2rem auto;
-}
-
-.openings-table-container {
-    flex: 2 1 320px;
-    min-width: 280px;
-    margin-top: 0.2em;
-}
-
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: #4e2e0e;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px #0008;
-    margin-top: 0.5em;
-    font-family: 'Merriweather', 'Georgia', serif;
-}
-
-th, td {
-    padding: 0.9em 1em;
-    text-align: left;
-}
-
-th {
-    background: #6b1e23;
-    color: #e8dbc3;
-    font-size: 1.13rem;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-}
-
-td {
-    border-bottom: 1px solid #b8a88a;
-    font-size: 1.04rem;
-    vertical-align: top;
-    color: #f5ede6;
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-.chess-board-caption {
-    margin-top: 1.2em;
-    font-size: 1.13rem;
-    line-height: 1.8;
-    color: #e8dbc3;
-    background: #3e1c0e;
-    border-left: 4px solid #e8dbc3;
-    padding: 0.7em 1.2em;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px #0008;
-    max-width: 600px;
-    font-family: 'Merriweather', 'Georgia', serif;
-}
-
-footer {
-    text-align: center;
-    padding: 1.2rem 0 1.5rem 0;
-    background: linear-gradient(90deg, #6b1e23 0%, #3e1c0e 100%);
-    color: #e8dbc3;
-    font-size: 1.13rem;
-    line-height: 2;
-    letter-spacing: 0.04em;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-    margin-top: 2.5rem;
-    box-shadow: 0 -2px 12px #0008;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-footer::after {
-    content: " ♕";
-    font-size: 1.3em;
-    color: #e8dbc3;
-    vertical-align: middle;
-    margin-left: 0.2em;
-}
-
-#coin-flip-section {
-    margin-top: 2.5em;
-    text-align: center;
-}
-
-#coin-flip-btn {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    background: linear-gradient(90deg, #e8dbc3 0%, #b8a88a 100%);
-    color: #3e1c0e;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8em 1.5em;
-    font-size: 1.13rem;
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 1.2em;
-    margin-right: 1em;
-    box-shadow: 0 2px 8px #0006;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    display: inline-block;
-}
-
-#coin-flip-btn:hover, #coin-flip-btn:focus {
-    background: #6b1e23;
-    color: #e8dbc3;
-    box-shadow: 0 4px 16px #e8dbc355;
-    outline: none;
-}
-
-#coin-flip-result {
-    display: block;
-    margin: 1.2em auto 0 auto;
-    font-size: 2.1rem;
-    color: #e8dbc3;
-    text-shadow: 0 2px 8px #6b1e23cc;
-    font-family: 'Dancing Script', cursive;
-    letter-spacing: 2px;
-    min-height: 2.5em;
-    transition: transform 0.3s;
-}
-
-#coin-flip-queen {
-    font-size: 3.2rem;
-    color: #ffd700;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.3em;
-    text-shadow: 0 2px 12px #6b1e23cc;
-}
-
-#coin-flip-pawn {
-    font-size: 2.7rem;
-    color: #b8a88a;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.3em;
-    text-shadow: 0 2px 8px #3e1c0e;
-}
-
+/* FAN ART SCRAPBOOK */
 #fanart {
     margin-bottom: 3rem;
     margin-top: 2.5rem;
     text-align: center;
+    background: linear-gradient(120deg, #f5ede6 60%, #e8dbc3 100%);
+    border-radius: 22px;
+    box-shadow: 0 2px 24px #bfa76f33;
+    padding: 2.2rem 1.2rem 2.5rem 1.2rem;
+    border: 2px dashed var(--gold);
+    position: relative;
+    z-index: 1;
 }
 
 #fanart h2 {
     margin-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 2.1rem;
     letter-spacing: 2px;
-    color: #b86b4b;
+    color: var(--deep-burgundy);
     text-shadow: 0 2px 10px #2d1a1a44;
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-heading);
+    background: var(--gold-foil);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .fanart-scrapbook {
@@ -452,9 +364,9 @@ footer::after {
 
 .fanart-polaroid {
     background: #f5ede6;
-    border: 2.5px solid #b8a88a;
+    border: 2.5px solid var(--gold);
     border-radius: 18px 18px 24px 24px;
-    box-shadow: 0 8px 32px #0007, 0 2px 8px #b8a88a44;
+    box-shadow: 0 8px 32px #0007, 0 2px 8px var(--gold);
     width: 180px;
     padding: 0.7em 0.7em 1.7em 0.7em;
     position: relative;
@@ -464,6 +376,15 @@ footer::after {
     transition: transform 0.18s;
     margin-bottom: 0.5em;
     background-image: repeating-linear-gradient(135deg, #f5ede6 0 6px, #f3e6d6 7px 12px);
+    border-bottom: 8px solid var(--gold);
+    border-right: 3px solid #bfa76f;
+    border-left: 3px solid #bfa76f;
+    animation: scrapbook-float 4s infinite ease-in-out alternate;
+}
+
+@keyframes scrapbook-float {
+    0% { box-shadow: 0 8px 32px #0007, 0 2px 8px var(--gold);}
+    100% { box-shadow: 0 16px 48px #bfa76f99, 0 4px 16px var(--gold);}
 }
 
 .fanart-polaroid img {
@@ -473,12 +394,12 @@ footer::after {
     border-radius: 12px 12px 8px 8px;
     box-shadow: 0 2px 8px #b8a88a33;
     margin-bottom: 0.7em;
-    border: 1.5px solid #e8dbc3;
+    border: 1.5px solid var(--gold);
 }
 
-.fanart-caption {
-    font-family: 'Dancing Script', cursive;
-    color: #6b1e23;
+.fanart-artist {
+    font-family: var(--font-cursive);
+    color: var(--deep-burgundy);
     font-size: 1.08rem;
     line-height: 1.4;
     text-align: center;
@@ -489,13 +410,9 @@ footer::after {
     border-radius: 8px;
     padding: 0.2em 0.3em;
     box-shadow: 0 1px 4px #b8a88a22;
-}
-
-.fanart-artist {
-    font-size: 0.97em;
-    color: #b86b4b;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 400;
+    border-top: 1px dashed var(--gold);
+    border-bottom: 1px dashed var(--gold);
+    display: inline-block;
 }
 
 .fanart-polaroid.rotate-left {
@@ -515,12 +432,13 @@ footer::after {
     transform: translateX(-50%) rotate(-3deg);
     width: 48px;
     height: 18px;
-    background: #e8dbc3;
+    background: var(--gold-foil);
     border-radius: 6px 6px 12px 12px;
     box-shadow: 0 2px 6px #b8a88a55;
     z-index: 2;
     opacity: 0.7;
     clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    border-bottom: 1.5px solid var(--gold);
 }
 
 .fanart-polaroid.rotate-right::before {
@@ -530,84 +448,340 @@ footer::after {
 
 .fanart-polaroid:hover {
     z-index: 2;
-    box-shadow: 0 12px 40px #6b1e23bb, 0 4px 16px #b8a88a66;
-    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 16px 48px var(--gold), 0 4px 16px #bfa76f99;
+    transform: scale(1.06) rotate(-1deg);
 }
 
 .fanart-polaroid.rotate-right:hover {
-    transform: scale(1.04) rotate(2deg);
+    transform: scale(1.06) rotate(2deg);
 }
 
-.fanart-note {
-    font-family: 'Dancing Script', cursive;
-    color: #b86b4b;
-    font-size: 1.18rem;
-    margin-top: 1.2em;
-    background: #f5ede6cc;
+.fanart-scrapbook::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 90%;
+    width: 80%;
+    height: 18px;
+    background: repeating-linear-gradient(135deg, #e8dbc3 0 6px, #fffbe6 7px 12px);
+    opacity: 0.18;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.gold-divider {
+    width: 120px;
+    height: 4px;
+    margin: 1.2em auto 0.5em auto;
+    background: var(--gold-foil);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #d4af3744;
+}
+
+.queen-watermark {
+    position: fixed;
+    bottom: 5vw;
+    right: 3vw;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    font-size: 13vw;
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.queen-watermark::before {
+    content: "♛";
+    font-size: 1em;
+    color: var(--gold);
+    text-shadow: 0 2px 24px #bfa76f, 0 1px 0 #fffbe6;
+    font-family: inherit;
+    opacity: 1;
+}
+
+.chess-openings-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.chess-board-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+    max-width: 340px;
+    flex: 1 1 260px;
+    margin-bottom: 1.2em;
+    background: #fffbe6;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #bfa76f44;
+    padding: 1em 0.5em 0.7em 0.5em;
+    border: 2px solid var(--gold);
+}
+
+.chess-board-image {
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 2.5px solid var(--gold);
+    box-shadow: 0 2px 12px #000a;
+    background: #3e1c0e;
+    margin: 0 auto 0.5rem auto;
+}
+
+.chess-board-label {
+    font-family: var(--font-cursive);
+    color: var(--deep-burgundy);
+    font-size: 1.08rem;
+    margin-top: 0.7em;
+    background: #fffbe6cc;
+    border-radius: 8px;
+    padding: 0.2em 0.7em;
+    box-shadow: 0 1px 4px #b8a88a22;
+    border: 1px dashed var(--gold);
     display: inline-block;
-    padding: 0.5em 1.2em;
-    border-radius: 12px;
-    box-shadow: 0 1px 8px #b8a88a33;
-    letter-spacing: 1px;
 }
 
-.fanart-tag {
-    color: #6b1e23;
-    font-weight: bold;
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.1em;
+.openings-table-container {
+    flex: 2 1 340px;
+    min-width: 280px;
+    margin-top: 0.2em;
+}
+
+.openings-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #4e2e0e;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #000a;
+    margin-top: 0.5em;
+    font-family: var(--font-serif);
+    font-size: 1.07rem;
+    border: 2px solid var(--gold);
+    margin-bottom: 0.5em;
+}
+
+.openings-table th, .openings-table td {
+    padding: 1em 1.1em;
+    text-align: left;
+    vertical-align: top;
+}
+
+.openings-table th {
+    background: var(--deep-burgundy);
+    color: var(--gold);
+    font-size: 1.13rem;
+    font-family: var(--font-cursive);
+    font-weight: 700;
+    border-bottom: 2px solid var(--gold);
+    letter-spacing: 1.2px;
+}
+
+.openings-table td {
+    border-bottom: 1px solid #b8a88a;
+    color: var(--bg-light);
+    background: rgba(62,44,35,0.93);
+}
+
+.openings-table tr:last-child td {
+    border-bottom: none;
+}
+
+.chess-board-caption {
+    margin-top: 1.2em;
+    font-size: 1.13rem;
+    color: var(--gold);
+    background: #3e1c0e;
+    border-left: 4px solid var(--gold);
+    padding: 0.7em 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px #0008;
+    max-width: 600px;
+    font-family: var(--font-serif);
+    margin-bottom: 2em;
+}
+
+/* Coin Flip Result */
+#coin-flip-result {
+    display: block;
+    margin: 1.5em auto 0 auto;
+    font-size: 2.8rem;
+    color: var(--gold);
+    text-shadow: 0 4px 32px #fffbe6, 0 2px 12px #d4af37;
+    font-family: var(--font-cursive);
+    letter-spacing: 2px;
+    min-height: 2.5em;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.coin-flip-label {
+    font-size: 1.3em;
+    margin-left: 0.3em;
+    font-family: var(--font-cursive);
+    vertical-align: middle;
+}
+
+#coin-flip-queen {
+    font-size: 3.5rem;
+    color: var(--gold);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    text-shadow: 0 2px 12px #fffbe6, 0 1px 0 #d4af37;
+}
+
+#coin-flip-pawn {
+    font-size: 3.1rem;
+    color: #bfa76f;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    text-shadow: 0 2px 8px #3e1c0e;
+}
+
+/* Beth's Style Carousel */
+#beth-style {
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    outline: none;
+}
+
+.style-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+    margin-top: 1.2em;
+    background: linear-gradient(120deg, #fffbe6 60%, #e8dbc3 100%);
+    border-radius: 22px;
+    box-shadow: 0 2px 24px #bfa76f33;
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    border: 2px dashed var(--gold);
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-btn {
+    background: var(--gold-foil);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    font-size: 2.1rem;
+    color: var(--deep-burgundy);
+    font-family: var(--font-cursive);
+    cursor: pointer;
+    box-shadow: 0 2px 8px #bfa76f44;
+    transition: background 0.2s, color 0.2s, transform 0.18s;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover, .carousel-btn:focus {
+    background: var(--deep-burgundy);
+    color: var(--gold);
+    transform: scale(1.12);
+}
+
+.carousel-image-frame {
+    width: 260px;
+    height: 340px;
+    background: #fffbe6;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #bfa76f55, 0 2px 8px #0004;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    border: 2px solid var(--gold);
+    overflow: hidden;
+}
+
+#style-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0;
+    border-bottom: 1.5px solid var(--gold);
+    background: #e8dbc3;
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 1;
+}
+
+.carousel-img-animate {
+    animation: carousel-fade-in 0.45s cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes carousel-fade-in {
+    0% { opacity: 0; transform: translateY(20px) scale(0.98);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.carousel-caption {
+    font-family: var(--font-cursive);
+    color: var(--deep-burgundy);
+    font-size: 1.13rem;
+    background: #fffbe6cc;
+    border-radius: 0 0 18px 18px;
+    padding: 0.7em 0.5em;
+    width: 100%;
+    text-align: center;
+    border-top: 1px dashed var(--gold);
+    box-shadow: 0 1px 4px #b8a88a22;
+    font-weight: 600;
+    min-height: 2.5em;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 900px) {
-    .gallery {
-        gap: 1.2rem;
+    .style-carousel {
+        max-width: 98vw;
     }
-    .gallery-image-container {
-        height: 34vw;
-        min-height: 160px;
-        max-height: 260px;
+    .carousel-image-frame {
+        width: 90vw;
+        max-width: 260px;
+        height: 320px;
     }
-    .fanart-scrapbook {
-        gap: 1.5rem 1rem;
-    }
-    .fanart-polaroid {
-        width: 140px;
-        padding: 0.5em 0.5em 1.2em 0.5em;
-    }
-    .fanart-polaroid img {
-        height: 110px;
+    #style-image {
+        height: 200px;
     }
 }
 
 @media (max-width: 600px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-    .gallery-image-container {
-        height: 40vw;
-        min-height: 120px;
-        max-height: 220px;
-    }
-    nav a {
-        margin: 0 0.7rem;
-        font-size: 1rem;
-    }
-    main {
-        padding: 1.1rem 0.5rem 1.5rem 0.5rem;
-    }
-    .chess-board-image {
+    .style-carousel {
         max-width: 100vw;
+        padding: 1rem 0.2rem 1rem 0.2rem;
     }
-    .fanart-scrapbook {
-        flex-direction: column;
-        align-items: center;
-    }
-    .fanart-polaroid {
-        width: 90vw;
+    .carousel-image-frame {
+        width: 98vw;
         max-width: 220px;
+        height: 220px;
     }
-    .fanart-polaroid img {
-        height: 90px;
+    #style-image {
+        height: 120px;
     }
 }
+
+/* ...existing code... */

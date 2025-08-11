@@ -10,8 +10,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="queen-watermark"></div>
     <header role="banner">
-        <h1>The Queen's Gambit Tribute</h1>
+        <h1>
+            <span class="title-highlight">
+                <span class="title-text">The Queen's Gambit Tribute</span>
+            </span>
+        </h1>
+        <div class="gold-divider"></div>
         <nav role="navigation" aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#characters">Characters</a>
@@ -101,7 +107,7 @@
         </section>
         <section id="fanart">
             <h2>Fan Art</h2>
-            <div class="fanart-scrapbook">
+            <div class="fanart-scrapbook fanart-grid">
                 <div class="fanart-polaroid rotate-left">
                     <img src="https://i.pinimg.com/736x/d2/5a/ba/d25abae9209bb089b6b09c006b322dd3.jpg" alt="Beth Harmon fan art by Lin G.">
                     <div class="fanart-artist">by Anna Zhuravleva</div>
@@ -122,6 +128,21 @@
                     <img src="https://i.pinimg.com/736x/ba/aa/da/baaadadd35a610bdd35ed4ed38ad2a99.jpg" alt="Beth Harmon fan art by Nell Fallcard">
                     <div class="fanart-artist">by Nell Fallcard</div>
                 </div>
+                <div class="fanart-polaroid rotate-right">
+                    <img src="https://cdna.artstation.com/p/assets/images/images/032/259/058/large/genevieve-dumas-beth-harmon-final.jpg?1605904239" alt="Beth Harmon fan art by Genevieve Dumas">
+                    <div class="fanart-artist">by Genevieve Dumas</div>
+                </div>
+                <div class="fanart-polaroid rotate-right">
+                    <img src="https://w0.peakpx.com/wallpaper/607/503/HD-wallpaper-marcin-bystrzycki-chess-fan-art-beth-harmon-anya-taylor-joy-artwork-digital-painting-digital-art-chair-city-throne-portrait-display-city-lights-cyborg-playing-video-game-art-women-cyberpunk.jpg" alt="Beth Harmon fan art by Marcin Bystrzycki">
+                    <div class="fanart-artist">by Marcin Bystrzycki</div>
+                </div>
+                <div class="fanart-polaroid rotate-right">
+                    <img src="https://64.media.tumblr.com/c786b459b84b8a11427fa437bf3ae395/ab9d0a4fce03ea2c-3e/s1280x1920/24d00d3eea6558edad9c451e950ad275d8321fef.jpg" alt="Beth Harmon fan art by @dawoonart">
+                    <div class="fanart-artist">by @dawoonart</div>
+                </div>
+            </div>
+            <div class="fanart-note">
+                Want your art featured? Tag <span class="fanart-tag">#QueensGambitFanArt</span> on social media.
             </div>
         </section>
         <section id="facts">
@@ -138,41 +159,50 @@
         <section id="openings">
             <h2>Famous Chess Openings Featured</h2>
             <div class="chess-openings-section">
-                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-and-white-chess-board-template-design-d9649c353001bd68f86c5bf1c676bfaf_screen.jpg?ts=1747819206" alt="Chess Board" class="chess-board-image">
+                <div class="chess-board-image-wrapper">
+                    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/black-and-white-chess-board-template-design-d9649c353001bd68f86c5bf1c676bfaf_screen.jpg?ts=1747819206" alt="Chess Board" class="chess-board-image">
+                    <div class="chess-board-label">Visualize the moves!</div>
+                </div>
                 <div class="openings-table-container">
-                    <table>
+                    <table class="openings-table">
                         <thead>
                             <tr>
-                                <th>Opening Name</th>
+                                <th>Opening</th>
                                 <th>Moves</th>
+                                <th>Style</th>
                                 <th>Notes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Queen's Gambit</td>
-                                <td>1. d4 d5 2. c4</td>
-                                <td>Main theme of the show. White offers a pawn to control the center.</td>
+                                <td>1. d4 d5<br>2. c4</td>
+                                <td>Classical</td>
+                                <td>White offers a pawn to control the center. Main theme of the show.</td>
                             </tr>
                             <tr>
                                 <td>Sicilian Defense</td>
-                                <td>1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6</td>
+                                <td>1. e4 c5<br>2. Nf3 d6<br>3. d4 cxd4<br>4. Nxd4 Nf6<br>5. Nc3 a6</td>
+                                <td>Aggressive</td>
                                 <td>Sharp, counterattacking opening. Popular at all levels.</td>
                             </tr>
                             <tr>
                                 <td>Caro-Kann Defense</td>
-                                <td>1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4</td>
-                                <td>Solid defense, often used by Beth in key matches.</td>
+                                <td>1. e4 c6<br>2. d4 d5<br>3. Nc3 dxe4<br>4. Nxe4</td>
+                                <td>Solid</td>
+                                <td>Often used by Beth in key matches.</td>
                             </tr>
                             <tr>
                                 <td>King's Indian Defense</td>
-                                <td>1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6</td>
-                                <td>Dynamic defense, used by top grandmasters.</td>
+                                <td>1. d4 Nf6<br>2. c4 g6<br>3. Nc3 Bg7<br>4. e4 d6</td>
+                                <td>Dynamic</td>
+                                <td>Used by top grandmasters.</td>
                             </tr>
                             <tr>
                                 <td>Ruy López</td>
-                                <td>1. e4 e5 2. Nf3 Nc6 3. Bb5</td>
-                                <td>Classic opening, rich in tactics and strategy.</td>
+                                <td>1. e4 e5<br>2. Nf3 Nc6<br>3. Bb5</td>
+                                <td>Classic</td>
+                                <td>Rich in tactics and strategy.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -182,9 +212,23 @@
                 <strong>Tip:</strong> The Queen's Gambit starts with 1.d4 d5 2.c4. Try visualizing it on the board above!
             </div>
         </section>
+        <section id="beth-style">
+            <h2>Beth's Style Gallery</h2>
+            <div class="style-carousel">
+                <button class="carousel-btn" id="style-prev" aria-label="Previous style">&#8592;</button>
+                <div class="carousel-image-frame">
+                    <img id="style-image" src="https://i.pinimg.com/originals/7c/3c/8f/7c3c8fe66e6031220e65433ef7a6af17.jpg" alt="Beth's style look">
+                    <div class="carousel-caption" id="style-caption">Beth's iconic checkered dress</div>
+                </div>
+                <button class="carousel-btn" id="style-next" aria-label="Next style">&#8594;</button>
+            </div>
+        </section>
     </main>
     <footer role="contentinfo">
-        &copy; 2024 Tribute to The Queen's Gambit. Fan-made website.
+        &copy; 2024 Tribute to The Queen's Gambit. Fan-made website.<br>
+        <span style="font-size:1em; color:#bfa76f; font-family:'Dancing Script',cursive; display:inline-block; margin-top:0.5em;">
+            Dedicated to the cast, creators, and fans who made chess beautiful again.
+        </span>
     </footer>
     <script>
     // Simple random chess quote feature
@@ -215,21 +259,72 @@
         quoteBox.style.display = 'block';
     });
 
-    // Chess Coin Flip Feature
+    // Chess Coin Flip Feature (make result larger and animated)
     const coinBtn = document.getElementById('coin-flip-btn');
     const coinResult = document.getElementById('coin-flip-result');
     coinBtn.addEventListener('click', () => {
         const isQueen = Math.random() < 0.5;
         if (isQueen) {
-            coinResult.innerHTML = '<span id="coin-flip-queen">♛</span>Queen!';
-            coinResult.style.transform = 'scale(1.15) rotate(-3deg)';
+            coinResult.innerHTML = '<span id="coin-flip-queen">♛</span><span class="coin-flip-label">Queen!</span>';
+            coinResult.style.transform = 'scale(1.35) rotate(-6deg)';
+            coinResult.style.color = '#d4af37';
+            coinResult.style.textShadow = '0 4px 32px #fffbe6, 0 2px 12px #d4af37';
         } else {
-            coinResult.innerHTML = '<span id="coin-flip-pawn">♙</span>Pawn!';
-            coinResult.style.transform = 'scale(1.08) rotate(3deg)';
+            coinResult.innerHTML = '<span id="coin-flip-pawn">♙</span><span class="coin-flip-label">Pawn!</span>';
+            coinResult.style.transform = 'scale(1.22) rotate(6deg)';
+            coinResult.style.color = '#bfa76f';
+            coinResult.style.textShadow = '0 2px 12px #fffbe6, 0 1px 6px #bfa76f';
         }
         setTimeout(() => {
             coinResult.style.transform = '';
-        }, 600);
+        }, 700);
+    });
+
+    // Beth's Style Gallery Carousel (fix right arrow button and enhance visuals)
+    const styleImages = [
+        {
+            src: "https://i.pinimg.com/originals/7c/3c/8f/7c3c8fe66e6031220e65433ef7a6af17.jpg",
+            caption: "Beth's iconic checkered dress"
+        },
+        {
+            src: "https://hips.hearstapps.com/hmg-prod/images/queens-gambit-1604069992.jpg",
+            caption: "Beth's Parisian look"
+        },
+        {
+            src: "https://www.lofficielusa.com/photos/5fa2e7e2b7e6e7e2b7e6e7e2/16:9/w_2560%2Cc_limit/queensgambit.jpg",
+            caption: "Beth's final white coat ensemble"
+        },
+        {
+            src: "https://www.justjared.com/wp-content/uploads/2020/10/anya-taylor-joy-queens-gambit-costumes-photos-01.jpg",
+            caption: "Beth's tournament chic"
+        }
+    ];
+    let styleIdx = 0;
+    const styleImg = document.getElementById('style-image');
+    const styleCap = document.getElementById('style-caption');
+    function updateStyleGallery(idx) {
+        styleImg.src = styleImages[idx].src;
+        styleImg.alt = styleImages[idx].caption;
+        styleCap.textContent = styleImages[idx].caption;
+        styleImg.classList.remove('carousel-img-animate');
+        void styleImg.offsetWidth; // trigger reflow for animation
+        styleImg.classList.add('carousel-img-animate');
+    }
+    document.getElementById('style-prev').onclick = () => {
+        styleIdx = (styleIdx - 1 + styleImages.length) % styleImages.length;
+        updateStyleGallery(styleIdx);
+    };
+    document.getElementById('style-next').onclick = () => {
+        styleIdx = (styleIdx + 1) % styleImages.length;
+        updateStyleGallery(styleIdx);
+    };
+    // Keyboard navigation for accessibility
+    document.getElementById('beth-style').addEventListener('keydown', (e) => {
+        if (e.key === "ArrowLeft") {
+            document.getElementById('style-prev').click();
+        } else if (e.key === "ArrowRight") {
+            document.getElementById('style-next').click();
+        }
     });
     </script>
 </body>
