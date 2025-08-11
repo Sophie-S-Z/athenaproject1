@@ -14,7 +14,7 @@
     <header role="banner">
         <h1>
             <span class="title-highlight">
-                <span class="title-text">The Queen's Gambit Tribute</span>
+                <span class="title-text gradient-title">The Queen's Gambit Tribute</span>
             </span>
         </h1>
         <div class="gold-divider"></div>
@@ -141,9 +141,6 @@
                     <div class="fanart-artist">by @dawoonart</div>
                 </div>
             </div>
-            <div class="fanart-note">
-                Want your art featured? Tag <span class="fanart-tag">#QueensGambitFanArt</span> on social media.
-            </div>
         </section>
         <section id="facts">
             <h2>Fun Facts</h2>
@@ -217,7 +214,7 @@
             <div class="style-carousel">
                 <button class="carousel-btn" id="style-prev" aria-label="Previous style">&#8592;</button>
                 <div class="carousel-image-frame">
-                    <img id="style-image" src="https://i.pinimg.com/originals/7c/3c/8f/7c3c8fe66e6031220e65433ef7a6af17.jpg" alt="Beth's style look">
+                    <img id="style-image" src="https://ueeshop.ly200-cdn.com/u_file/UPBA/UPBA643/2101/products/29/0ba6e58fae.jpg" alt="Beth's style look">
                     <div class="carousel-caption" id="style-caption">Beth's iconic checkered dress</div>
                 </div>
                 <button class="carousel-btn" id="style-next" aria-label="Next style">&#8594;</button>
@@ -225,8 +222,11 @@
         </section>
     </main>
     <footer role="contentinfo">
-        &copy; 2024 Tribute to The Queen's Gambit. Fan-made website.<br>
-        <span style="font-size:1em; color:#bfa76f; font-family:'Dancing Script',cursive; display:inline-block; margin-top:0.5em;">
+        <div>
+            &copy; 2024 Tribute to The Queen's Gambit. Fan-made website.
+        </div>
+        <div class="footer-divider"></div>
+        <span class="footer-dedication">
             Dedicated to the cast, creators, and fans who made chess beautiful again.
         </span>
     </footer>
@@ -283,19 +283,31 @@
     // Beth's Style Gallery Carousel (fix right arrow button and enhance visuals)
     const styleImages = [
         {
-            src: "https://i.pinimg.com/originals/7c/3c/8f/7c3c8fe66e6031220e65433ef7a6af17.jpg",
+            src: "https://ueeshop.ly200-cdn.com/u_file/UPBA/UPBA643/2101/products/29/0ba6e58fae.jpg",
             caption: "Beth's iconic checkered dress"
         },
         {
-            src: "https://hips.hearstapps.com/hmg-prod/images/queens-gambit-1604069992.jpg",
+            src: "https://i2.wp.com/theartofcostume.com/wp-content/uploads/2021/09/the-queens-gambit-costumes-7-683x1024.jpg?ssl=1",
             caption: "Beth's Parisian look"
         },
         {
-            src: "https://www.lofficielusa.com/photos/5fa2e7e2b7e6e7e2b7e6e7e2/16:9/w_2560%2Cc_limit/queensgambit.jpg",
+            src: "https://i.pinimg.com/564x/85/04/9f/85049fa4eef0d720ae1110f695f377f5.jpg",
             caption: "Beth's final white coat ensemble"
         },
         {
-            src: "https://www.justjared.com/wp-content/uploads/2020/10/anya-taylor-joy-queens-gambit-costumes-photos-01.jpg",
+            src: "https://i.pinimg.com/originals/c9/cc/8e/c9cc8e78a09e6cd6f705629e4d353757.jpg",
+            caption: "Arrival in Russia outfit"
+        },
+        {
+            src: "https://i0.wp.com/theartofcostume.com/wp-content/uploads/2021/09/The-Queens-Gambit-_077R.jpg?resize=878%2C1024&ssl=1",
+            caption: "Elegant and sophisticated look"
+        },
+        {
+            src: "https://www.americajackets.com/wp-content/uploads/2023/08/The-Queens-Gambit-Beth-Harmon-Dress.jpg.webp",
+            caption: "Winning dress from the final match"
+        },
+        {
+            src: "https://compote.slate.com/images/89f1f4d1-b3ed-481c-b416-f5f87c48f8cb.jpeg?crop=3600%2C2400%2Cx0%2Cy0",
             caption: "Beth's tournament chic"
         }
     ];

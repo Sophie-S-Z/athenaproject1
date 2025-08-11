@@ -20,22 +20,35 @@
 
 body {
     font-family: var(--font-serif);
-    background: repeating-linear-gradient(135deg, #2d1a1a 0 80px, #4e2e0e 80px 160px);
+    background: radial-gradient(ellipse at 60% 20%, #3e1c0e 0%, #2d1a1a 100%);
     color: var(--bg-light);
     margin: 0;
     padding: 0;
     line-height: 1.85;
     font-size: 1.08rem;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(212,175,55,0.08) 0%, rgba(43,21,21,0.0) 70%);
+    opacity: 1;
 }
 
 header {
     background: linear-gradient(90deg, #6b1e23 0%, #3e1c0e 100%);
-    padding: 2.5rem 0 1.5rem 0;
+    padding: 2.7rem 0 1.7rem 0;
     text-align: center;
     box-shadow: 0 2px 24px #000a;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 44px;
+    border-bottom-right-radius: 44px;
     position: relative;
     border-bottom: 3px solid var(--gold);
 }
@@ -47,28 +60,13 @@ header::before {
     left: 0; right: 0; top: 0;
     height: 18px;
     background: var(--gold-foil);
-    opacity: 0.25;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    opacity: 0.18;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
     z-index: 1;
 }
 
-header h1 {
-    font-family: var(--font-heading);
-    font-size: 3.1rem;
-    margin: 0;
-    letter-spacing: 2.5px;
-    color: var(--bg-accent);
-    text-shadow: 0 2px 16px #6b1e23cc, 0 1px 0 #3e1c0e;
-    position: relative;
-    z-index: 2;
-    background: var(--gold-foil);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-header h1 .title-highlight {
+h1 .title-highlight {
     display: inline-block;
     position: relative;
     padding: 0.18em 0.7em 0.18em 0.7em;
@@ -76,7 +74,7 @@ header h1 .title-highlight {
     background: none;
 }
 .title-text {
-    background: rgba(44, 21, 21, 0.82);
+    background: rgba(44, 21, 21, 0.92);
     color: #ffd700;
     border-radius: 14px;
     padding: 0.18em 0.7em;
@@ -86,6 +84,19 @@ header h1 .title-highlight {
     text-shadow: 0 2px 8px #fffbe6cc, 0 1px 0 #fffbe6, 0 2px 16px #000a;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+    border: 2px solid var(--gold);
+    box-shadow: 0 2px 16px #fffbe6cc, 0 1px 0 #d4af37;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    margin: 0;
+    letter-spacing: 2.5px;
+    color: var(--bg-accent);
+    text-shadow: 0 2px 16px #6b1e23cc, 0 1px 0 #3e1c0e;
+    position: relative;
+    z-index: 2;
 }
 
 header h1::after {
@@ -95,6 +106,15 @@ header h1::after {
     vertical-align: middle;
     margin-left: 0.3em;
     text-shadow: 0 2px 8px #fffbe6cc;
+}
+
+gold-divider {
+    width: 120px;
+    height: 4px;
+    margin: 1.2em auto 0.5em auto;
+    background: var(--gold-foil);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px #d4af3744;
 }
 
 nav {
@@ -113,7 +133,7 @@ nav a {
     letter-spacing: 2px;
     padding: 0.7rem 1.2rem;
     border-radius: 12px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
     box-shadow: 0 1px 4px #0004;
     font-family: var(--font-cursive);
     border: 1.5px solid transparent;
@@ -127,21 +147,32 @@ nav a:hover, nav a:focus {
     border-color: var(--gold);
     box-shadow: 0 2px 12px var(--gold);
     outline: none;
+    text-shadow: 0 2px 8px #fffbe6cc;
 }
 
 main {
     max-width: 980px;
-    margin: 2.8rem auto 2.5rem auto;
+    margin: 3.2rem auto 3.5rem auto;
     background: linear-gradient(120deg, #3e1c0e 0%, #6b1e23 100%);
-    padding: 2.5rem 2.2rem 2.7rem 2.2rem;
-    border-radius: 28px;
-    box-shadow: 0 8px 48px #000c, 0 2px 12px var(--gold);
+    padding: 2.7rem 2.2rem 2.9rem 2.2rem;
+    border-radius: 32px;
+    box-shadow: 0 8px 48px #000c, 0 2px 12px var(--gold), 0 0px 0px 8px #fffbe60a;
+    border: 3.5px solid var(--gold);
     position: relative;
-    border: 2.5px solid var(--gold);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 section {
     margin-bottom: 2.7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 h2 {
@@ -160,12 +191,19 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul {
     padding-left: 1.3em;
     font-family: var(--font-serif);
     font-size: 1.09rem;
+    display: inline-block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 li {
@@ -225,7 +263,7 @@ blockquote#chess-quote {
     line-height: 2;
     display: block;
     font-family: var(--font-serif);
-    background-image: repeating-linear-gradient(135deg, #3e1c0e 0 12px, #4e2e0e 13px 24px);
+    background-image: none;
     border-top: 1.5px solid var(--gold);
     border-bottom: 1.5px solid var(--gold);
 }
@@ -258,6 +296,7 @@ blockquote#chess-quote::after {
     justify-content: center;
     align-items: flex-start;
     margin-top: 1.2rem;
+    text-align: center;
 }
 
 .gallery-image-container {
@@ -389,7 +428,7 @@ blockquote#chess-quote::after {
 
 .fanart-polaroid img {
     width: 100%;
-    height: 170px;
+    height: 200px; /* increased from 170px */
     object-fit: cover;
     border-radius: 12px 12px 8px 8px;
     box-shadow: 0 2px 8px #b8a88a33;
@@ -669,28 +708,24 @@ blockquote#chess-quote::after {
     justify-content: center;
     gap: 2.2rem;
     margin-top: 1.2em;
-    background: linear-gradient(120deg, #fffbe6 60%, #e8dbc3 100%);
+    background: linear-gradient(120deg, #fffbe6 0%, #f5ede6 60%, #e8dbc3 100%);
     border-radius: 22px;
-    box-shadow: 0 2px 24px #bfa76f33;
-    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
-    border: 2px dashed var(--gold);
-    position: relative;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 0 4px 32px #d4af3722, 0 2px 12px #bfa76f33;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    max-width: 650px;
 }
 
 .carousel-btn {
     background: var(--gold-foil);
-    border: 2px solid var(--gold);
+    border: 2.5px solid var(--gold);
     border-radius: 50%;
-    width: 54px;
-    height: 54px;
-    font-size: 2.1rem;
+    width: 58px;
+    height: 58px;
+    font-size: 2.2rem;
     color: var(--deep-burgundy);
     font-family: var(--font-cursive);
     cursor: pointer;
-    box-shadow: 0 2px 8px #bfa76f44;
+    box-shadow: 0 2px 12px #d4af3744;
     transition: background 0.2s, color 0.2s, transform 0.18s;
     outline: none;
     display: flex;
@@ -707,7 +742,7 @@ blockquote#chess-quote::after {
 .carousel-image-frame {
     width: 260px;
     height: 340px;
-    background: #fffbe6;
+    background: linear-gradient(120deg, #fffbe6 60%, #f5ede6 100%);
     border-radius: 18px;
     box-shadow: 0 4px 24px #bfa76f55, 0 2px 8px #0004;
     display: flex;
@@ -715,7 +750,7 @@ blockquote#chess-quote::after {
     align-items: center;
     justify-content: flex-end;
     position: relative;
-    border: 2px solid var(--gold);
+    border: 2.5px solid var(--gold);
     overflow: hidden;
 }
 
@@ -742,46 +777,115 @@ blockquote#chess-quote::after {
 .carousel-caption {
     font-family: var(--font-cursive);
     color: var(--deep-burgundy);
-    font-size: 1.13rem;
-    background: #fffbe6cc;
-    border-radius: 0 0 18px 18px;
-    padding: 0.7em 0.5em;
-    width: 100%;
+    font-size: 1.18rem;
+    background: linear-gradient(90deg, #fffbe6cc 60%, #e8dbc3cc 100%);
+    border-top: 1.5px dashed var(--gold);
+    min-height: 2.7em;
+    font-weight: 700;
+}
+
+/* Gradient Title */
+.gradient-title {
+    background: linear-gradient(90deg, #fffbe6 0%, #ffe9a7 30%, #d4af37 60%, #bfa76f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    color: #ffd700;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-shadow: 0 2px 8px #fffbe6cc, 0 1px 0 #fffbe6, 0 2px 16px #000a;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+footer {
     text-align: center;
-    border-top: 1px dashed var(--gold);
+    padding: 2.2rem 0 2.2rem 0;
+    background: linear-gradient(90deg, #3e1c0e 0%, #6b1e23 100%);
+    color: var(--gold);
+    font-size: 1.18rem;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
+    margin-top: 3.5rem;
+    box-shadow: 0 -2px 32px #000a, 0 -1px 0px 8px #fffbe60a;
+    letter-spacing: 0.04em;
+    font-family: var(--font-serif);
+    border-top: 3px solid var(--gold);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 7px;
+    background: var(--gold-foil);
+    opacity: 0.35;
+    border-radius: 4px;
+    margin-bottom: 1.2em;
+    z-index: 1;
+}
+
+footer .footer-divider {
+    width: 120px;
+    height: 3px;
+    background: var(--gold-foil);
+    border-radius: 2px;
+    margin: 1.2em auto 1.2em auto;
+    box-shadow: 0 2px 8px #d4af3744;
+}
+
+footer .footer-dedication {
+    font-size: 1.08em;
+    color: #bfa76f;
+    font-family: var(--font-cursive);
+    display: inline-block;
+    margin-top: 0.7em;
+    margin-bottom: 0.2em;
+    letter-spacing: 1px;
+    background: rgba(44, 21, 21, 0.18);
+    padding: 0.3em 1.2em;
+    border-radius: 10px;
     box-shadow: 0 1px 4px #b8a88a22;
-    font-weight: 600;
-    min-height: 2.5em;
-    letter-spacing: 0.5px;
+}
+
+footer::after {
+    content: " ♕";
+    font-size: 1.3em;
+    color: var(--gold);
+    vertical-align: middle;
+    margin-left: 0.2em;
+    text-shadow: 0 2px 8px #fffbe6cc;
 }
 
 @media (max-width: 900px) {
-    .style-carousel {
-        max-width: 98vw;
+    main {
+        padding: 1.3rem 0.5rem 1.5rem 0.5rem;
     }
-    .carousel-image-frame {
-        width: 90vw;
-        max-width: 260px;
-        height: 320px;
-    }
-    #style-image {
-        height: 200px;
+    footer {
+        padding: 1.2rem 0 1.5rem 0;
     }
 }
 
 @media (max-width: 600px) {
-    .style-carousel {
-        max-width: 100vw;
-        padding: 1rem 0.2rem 1rem 0.2rem;
+    main {
+        padding: 0.7rem 0.2rem 1rem 0.2rem;
+        border-radius: 18px;
     }
-    .carousel-image-frame {
-        width: 98vw;
-        max-width: 220px;
-        height: 220px;
-    }
-    #style-image {
-        height: 120px;
+    footer {
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        font-size: 1.01rem;
     }
 }
-
-/* ...existing code... */
