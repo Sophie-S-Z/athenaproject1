@@ -1,6 +1,5 @@
 # athenaproject1
 
-What This Project Is
 This is a tribute website dedicated to The Queen’s Gambit, my favorite show. It’s a static site built using HTML and CSS that brings together some of the things I found most powerful and memorable about the story: the complexity of chess, the elegance of Beth Harmon’s character, and the dark yet refined aesthetic of the world that the show depicts.
 
 The site includes a few interactive and thematic elements that reflect the show’s atmosphere and tone. I added quotes from real-life chess grandmasters, a chess coin flip feature, and a section featuring famous chess openings. The layout and color scheme were inspired by the show's progression, and it uses deeper and richer colors to match Beth’s development over time. There’s also a reference to the old money aesthetic that the visuals of the series are known for.
