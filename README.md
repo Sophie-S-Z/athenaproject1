@@ -1,4 +1,4 @@
-# athenaproject1 https://bin.phthallo.com/clLUOC.md
+# athenaproject1 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
 This is a tribute website dedicated to The Queen’s Gambit, my favorite show. It’s a static site built using HTML and CSS that brings together some of the things I found most powerful and memorable about the story: the complexity of chess, the elegance of Beth Harmon’s character, and the dark yet refined aesthetic of the world that the show depicts.
 
